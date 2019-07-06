@@ -1,0 +1,135 @@
+body{
+	font-family: helvetica;
+
+}
+/*Header styles start*/
+
+header{
+   background-image: url(../images/index-background.jpg);
+   background-size: cover;
+   height: 400px;
+
+}
+.header-menu-one{
+   display: flex;
+   border-bottom: solid 1px rgb(200,200,200);
+   color: rgb(200,200,200);
+   box-shadow: 1px 1px 1px #4d4d4d;
+    border-radius: 20px;
+}
+.logo{
+	font-size: 40px;
+	margin-left: 20px;
+}
+.logo span{
+	font-size: 20px;
+}
+.home {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: 20px;
+	margin-top: 15px;
+}
+.about,
+.projects,
+.contact{
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+.header-menu-two{
+	display: flex;
+	flex-direction: column;
+}
+.header-menu-two-divone{
+	margin-top: 20px;
+	margin-left: 40px;
+	width: 300px;
+	box-shadow: 1px 1px 9px rgb(200,200,200);
+	background-color: white;
+}
+.header-menu-two-divone p,
+.header-menu-two-divtwo p{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.header-menu-two-divtwo{
+	margin-left: auto;
+	width: 300px;
+	margin-right: 40px;
+	box-shadow: 1px 1px 9px rgb(200,200,200);
+	background-color: white;
+}
+/*Header styles end*/
+/*------------------------------------------------------------------------*/
+
+/*Section A, B styles start*/
+.sectionA{
+	margin-top: 100px;
+}
+.sectionB{
+	margin-top: 40px;
+}
+.sectionA div,
+.sectionB div{
+	margin: 20px;
+}
+.sectionA-title,
+.sectionB-title{
+	font-size: 30px;
+	padding-top: 20px;
+}
+
+section{
+	width: 80%;
+	margin: auto;
+	background-color: white;
+	box-shadow: 1px 1px 9px rgb(200,200,200);
+}
+.sectionA-img,
+.sectionB-img{
+	width: 100%;
+	height: auto;
+}
+.sectionA-last-div,
+.sectionB-last-div{
+	padding-bottom: 20px;
+}
+.sectionA-last-div span,
+.sectionB-last-div span{
+	display: inline-block;
+	box-shadow: 1px 1px 9px rgb(200,200,200);
+	color: rgb(150,150,150);
+	padding: 5px;
+}
+.sectionA-read-more,
+.sectionB-read-more{
+	width: 200px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background: linear-gradient(to bottom, #339933, #33cc33);
+	box-shadow: 1px 1px 1px #29a329;
+}
+ 
+/*Section A, B styles ends*/
+/*-------------------------------------------------------------------*/
+/*footer styles start*/
+.more-projects{
+	font-size: 20px;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+footer{
+	text-align: center;
+	border-top: solid 1px;
+}
+/*footer styles end*/
+
+
+
+/*==================*/
+@media only screen and (min-width:  984px){}

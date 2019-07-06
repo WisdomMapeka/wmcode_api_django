@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/index.css' %}">
+	<script type="text/javascript" src="{% static 'blog/js/index.js' %}"></script>
+</head>
+<body>
+
+	<header>
+		<div class="header-menu-one">
+			<span class="logo">W.M<span>Code</span></span>
+			<span class="home">Home</span>
+			<span class="about">About</span>
+			<span class="projects">Projects</span>
+			<span class="contact">Contact</span>
+		</div>
+		<div class="header-menu-two">
+			<div class="header-menu-two-divone">
+				<p style="font-size: 25px;">W.M Code</p>
+				<p style="font-size: 13px;">This is a site for  coding. That's all.  Enjoy! </p>
+			</div>
+			<div class="header-menu-two-divtwo">
+				<p style="font-size: 25px;">Favourite quote</p>
+				<p style="font-size: 13px;"><i>Computer programming is an art, because it applies accumulated knowledge to the world, because it requires skill and ingenuity, and especially because it produces objects of beauty. A programmer who subconsciously views himself as an artist will enjoy what he does and will do it better.</i>
+					<br>
+					<br>
+					<br>
+				<i>Donald Knuth</i></p>
+			</div>
+		</div>
+	</header>
+
+	<!-- Section A starts -->
+	{% for article in articles %}
+	<section class="sectionA">
+		<div class="sectionA-title">
+			{{article.title}}
+		</div>
+		<div>
+			{% if article.img_one %}
+			<img class="sectionA-img" src="{{ article.img_one.url}}">
+			{% endif %}
+		</div>
+		<div>
+			{{article.body_one}}
+		</div>
+		<div class="sectionA-read-more"><a href="{% url 'blog:article_detail' article.id %}">Read More</a></div>
+		<div class="sectionA-last-div">
+			<span>Published: {{article.pub_date}}</span>
+			<span>Author: {{article.author.name}}</span>
+			<span>Comments {{article.comments_set.all|length}}</span>
+		</div>
+	</section>
+	{% endfor %}
+	<!-- Section A ends -->
+	<!-- ------------------------------------------------------------- -->
+	<!-- Section B starts -->
+	<!-- <section class="sectionB">
+		<div class="sectionB-title">Building a Home page part one</div>
+		<div>
+			<img class="sectionB-img" src="static/images/thumbnails/httpswww.freshbooks-crop.com.png">
+		</div>
+		<div>Computer programming is an art, because it applies accumulated knowledge to the world, because it requires skill and ingenuity, and especially because it produces objects of beauty. A programmer who subconsciously views himself as an artist will enjoy what he does and will do it better.
+		Donald KnuthComputer programming is an art, because it applies accumulated knowledge to the world, because it requires skill and ingenuity, and especially because it produces objects of beauty. A programmer who subconsciously views himself as an artist will enjoy what he does and will do it better.
+		Donald Knuth</div>
+		<div class="sectionB-read-more">Read More</div>
+		<div class="sectionB-last-div">
+			<span>Published: 2 june</span>
+			<span>Author: w.m code</span>
+			<span>Comments 300</span>
+		</div>
+	</section> -->
+	<!-- Section B ends -->
+
+	<!-- Footer Start -->
+	<div class="more-projects">WORKING ON MORE PROJECTS. CHECK BACK FEW WEEKS FROM NOW</div>
+
+    <footer>W.M Code &copy; 2019</footer>
+	<!-- Footer End -->
+</body>
+</html>

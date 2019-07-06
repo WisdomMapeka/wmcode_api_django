@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/styles/default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/article_detail.css' %}">
+	<script type="text/javascript" src="{% static 'blog/js/index.js' %}"></script>
+	<script type="text/javascript" src="{% static 'blog/js/highlight.pack.js' %}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<header>
+		<div class="header-menu-one">
+			<span class="logo">W.M<span>Code</span></span>
+			<span class="home"><a href="{% url 'blog:index' %}">Home</a></span>
+			<span class="about">About</span>
+			<span class="projects">Projects</span>
+			<span class="contact">Contact</span>
+		</div>
+	</header>
+
+    <!-- Section-C start -->
+    <!-- first part of page start -->
+    <section class="sectionC">
+    	{% if detailed_article.title %}
+    	<div class="sectionC-title">
+    		{{detailed_article.title}}	
+    	</div>
+    	{% endif %}
+
+    	{% if detailed_article.sub_heading_1 %}
+    	<div class="sectionC-title">	
+    		{{detailed_article.sub_heading_1}}	
+    	</div>
+    	{% endif %}
+
+        {% if detailed_article.body_one %}
+	    <div>	
+    		{{detailed_article.body_one}}	
+	    </div>
+	    {% endif %}
+ 
+        {% if detailed_article.img_one %}
+	    <div>	 
+    		<img src="{{detailed_article.img_one.url}}">	
+	    </div>
+	    {% endif %}
+
+	     {% if detailed_article.body_two %}
+	    <div>	
+    		{{detailed_article.body_two}}	
+	    </div>
+	    {% endif %}
+
+	    <!-- --------------------new part page -->
+	    <!-- ==================================== -->
+
+
+	    {% if detailed_article.sub_heading_2 %}
+    	<div class="sectionC-title">	
+    		{{detailed_article.sub_heading_2}}	
+    	</div>
+    	{% endif %}
+
+        {% if detailed_article.code_one %}
+	    <div>
+	    	<div>
+	    		<pre>
+				    <code>
+			    		{{detailed_article.code_one}}
+					</code>
+				</pre>	
+	        </div>
+	    </div>
+	    {% endif %}
+
+
+	    <!--. -->
+	    {% if detailed_article.body_three %}
+	    <div>	
+    		{{detailed_article.body_three}}	
+	    </div>
+	    {% endif %}
+
+	    {% if detailed_article.img_two %}
+	    <div>	 
+    		<img src="{{detailed_article.img_two.url}}">	
+	    </div>
+	    {% endif %}
+
+	    {% if detailed_article.body_four %}
+	    <div>	
+    		{{detailed_article.body_four}}	
+	    </div>
+	    {% endif %}
+
+	    <!-- ----------------------------------------- -->
+	    <!-- ========================================= -->
+	    {% if detailed_article.sub_heading_3 %}
+    	<div class="sectionC-title">	
+    		{{detailed_article.sub_heading_3}}	
+    	</div>
+    	{% endif %}
+        
+        {% if detailed_article.code_two %}
+	    <div>
+	    	<div>
+	    		<pre>
+				    <code class="css">
+			    		{{detailed_article.code_two}}	
+					</code>
+				</pre>	
+	        </div>
+	    </div>
+	    {% endif %}
+
+
+	    <!--. -->
+	    {% if detailed_article.body_five %}
+	    <div>	
+    		{{detailed_article.body_five}}	
+	    </div>
+	    {% endif %}
+
+	    {% if detailed_article.img_three %}
+	    <div>	 
+    		<img src="{{detailed_article.img_three.url}}">	
+	    </div>
+	    {% endif %}
+
+	    {% if detailed_article.body_six %}
+	    <div>	
+    		{{detailed_article.body_six}}	
+	    </div>
+	    {% endif %}
+
+	    <!-- ----------------------------------------- -->
+	    <!-- ========================================= -->
+
+	   
+
+
+	    <div class="comment_form">
+	    	<p>Feel free to comment below</p>
+	    	<form>
+	    		<div>Name</div>
+	    		<input class="name" type="text" name="name"><br>
+	    		<div>Comment</div>
+	    		<textarea name="comment_message">
+	    			
+	    		</textarea><br>
+	    		<input class="submit" type="submit" name="submit comment">
+	    	</form>
+	    </div>
+	    <hr>
+	    <div>All coments <span>{{detailed_article.comments_set.all|length}}</span></div>
+
+
+<!-- example comment without replies -->
+<!-- 	    <div class="comment_text_container">
+	    	<span class="comment_owner">Wisdom</span><br>
+	    	<span class="comment">This is my comment</span><br> 
+	    </div>
+ -->
+        {% for comment in detailed_article.comments_set.all %}
+	    <div class="comment_text_container">
+	    	<span class="comment_owner">{{comment.comment_owner.name}}</span><br>
+	    	<span class="comment">{{comment.comment_body}}</span><br> 
+	    </div>
+        {% endfor %}
+	</section>
+
+    <!-- Section-C end -->
+    <!-- --------------------------------------------------- -->
+
+
+
+
+	<!-- Footer Start -->
+
+
+    <footer>W.M Code &copy; 2019</footer>
+	<!-- Footer End -->
+</body>
+</html>
